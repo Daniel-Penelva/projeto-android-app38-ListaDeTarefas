@@ -71,7 +71,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayout.VERTICAL));
-        //recyclerView.setAdapter();
+        recyclerView.setAdapter(tarefaAdapter);
+    }
+
+    // Para fazer o create da lista de tarefas
+    @Override
+    protected void onStart() {
+        carregarListaTarefas();
+        super.onStart();
     }
 
     @Override
